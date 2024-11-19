@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Y B Arzoo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">   
+</head>
+
+<body>
+
+    <header>
+        <h1> Y B Arzoo </h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#personal-information">About Me</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#fav-book">My Favorite Books</a></li>
+            <li><a href="#fav-quote">Favorite Quotes</a></li>
+            <li><a href="#photos">Photos</a></li>
+            <li><a href="weekly_schedule.html">Weekly Schedule</a></li>
+            <li><a href="#links">Favorite Links</a></li>
+            <li><a href="hero_converter.html">Hero Converter</a></li>
+            <li><a href="magic_numbers.html">Magical Numbers</a></li>
+        </ul>
+    </nav>
+
+
+    <div id="converter">
+        <input type="number" id="input-value" placeholder="Enter Value">
+        <select id="unit-select">
+            <option value="kg-to-lb"> Kilograms to Pounds</option>
+            <option value="lb-to-kg"> Pounds to Kilograms</option>
+        </select>
+        <button onclick="convert()"> Convert </button>
+        <p id="result"> </p>
+    </div>
+
+
+
+    <script>
+        function convert(){
+            const value = parseFloat(document.getElementById("input-value").value);
+            const unit = document.getElementById("unit-select").value;
+            let result;
+
+            if (unit == "kg-to-lb"){
+                result = value * 2.2046 + " lbs";
+            }
+            else if (unit == "lb-to-kg"){
+                result = value * 0.4536 + " kg";
+
+            }
+            else {
+                result = "Invalid Selection";
+            }
+
+            document.getElementById("result").textContent = result;
+        }
+    </script>
+
+
+</body>
+</html>

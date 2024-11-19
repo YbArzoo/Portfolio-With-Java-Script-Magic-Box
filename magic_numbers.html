@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Y B Arzoo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">   
+</head>
+
+<body>
+
+    <header>
+        <h1> Y B Arzoo </h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#personal-information">About Me</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#fav-book">My Favorite Books</a></li>
+            <li><a href="#fav-quote">Favorite Quotes</a></li>
+            <li><a href="#photos">Photos</a></li>
+            <li><a href="weekly_schedule.html">Weekly Schedule</a></li>
+            <li><a href="#links">Favorite Links</a></li>
+            <li><a href="hero_converter.html">Hero Converter</a></li>
+            <li><a href="magic_numbers.html">Magical Numbers</a></li>
+        </ul>
+    </nav>
+
+    <p id="des_magic_num">Find the Max, Min, Sum, Average and reverse order of a series of your favourite numbers!</p>
+    <p id="des_magic_num">Dont forget to seperate them using commas!!</p>
+
+    <div id="number-operations">
+        <input type="text" id="number-series" placeholder="Enter Your Favourite Numbers seperated by commas!">
+        <button onclick="processNumbers()">Process</button>
+        <p id="output"></p>
+    </div>
+
+    <script>
+        function processNumbers(){
+            const input = document.getElementById("number-series").value;
+            const numbers = input.split(',').map(Number);
+            if (numbers.some(isNaN)){
+                document.getElementById("output").textContent = "Please enter valid numbers.";
+                return;
+            }
+
+            const max = Math.max(...numbers);
+            const min = Math.min(...numbers);
+            const sum = numbers.reduce((a,b) => a+ b, 0);
+            const avg = sum / numbers.length;
+            const reversed = numbers.slice().reverse();
+
+            document.getElementById("output").innerHTML = `
+                Max: ${max} <br>
+                Min: ${min} <br>
+                Sum: ${sum} <br>
+                Average: ${avg} <br>
+                Reverse Order: ${reversed.join(', ')}
+            `;
+
+        }
+    </script>
+
+
+
+
+</body>
+</html>
+    

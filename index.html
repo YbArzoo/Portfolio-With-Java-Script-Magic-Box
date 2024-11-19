@@ -23,6 +23,8 @@
             <li><a href="#photos">Photos</a></li>
             <li><a href="weekly_schedule.html">Weekly Schedule</a></li>
             <li><a href="#links">Favorite Links</a></li>
+            <li><a href="hero_converter.html">Hero Converter</a></li>
+            <li><a href="magic_numbers.html">Magical Numbers</a></li>
         </ul>
     </nav>
     
@@ -137,8 +139,52 @@
     </section>
 
     <div id="quote-box">
-        
+        <p id="quote">
+            Random Quotes Generator
+        </p>
+        <button class="quote-button" onclick="changeColor('red')">Red</button>
+        <button class="quote-button" onclick="changeColor('blue')">Blue</button>
+        <button class="quote-button" onclick="changeColor('green')">Green</button>
+        <button class="quote-button" onclick="changeColor('yellow')">Yellow</button>
     </div>
+
+    <script>
+        const quotes = ["The greatest glory in living lies not in never falling, but in rising every time we fall. -Nelson Mandela", "The way to get started is to quit talking and begin doing. -Walt Disney", "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking. -Steve Jobs", "The future belongs to those who believe in the beauty of their dreams. -Eleanor Roosevelt", "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough. -Oprah Winfrey", "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success. -James Cameron", "You may say I'm a dreamer, but I'm not the only one. I hope someday you'll join us. And the world will live as one. -John Lennon"]
+        document.getElementById("quote").textContent = quotes[Math.floor(Math.random() * quotes.length)];
+
+
+        function changeColor(color) {
+            const box = document.getElementById("quote-box");
+            box.style.color = color;
+            box.style.borderColor = color;
+            box.style.backgroundColor = lightenOrDarken(color, 40); //dynamic color set kortese
+        }
+
+        function lightenOrDarken(color, percent){
+            if (color == "red") {
+                box.style.color = "red";
+                return "#fcccc";
+            } 
+            if (color == "blue") {
+                box.style.color = "blue";
+                return "#ccccff";
+            } 
+            if (color == "green") {
+                box.style.color = "green";
+                return "#ccffcc";
+            } 
+            if (color == "yellow") {
+                box.style.color = "black";
+                return "#000000";
+
+            } 
+            return color;
+        }
+
+    </script>
+
+
+
 
     <footer>
         <p id="modified-time"></p>
