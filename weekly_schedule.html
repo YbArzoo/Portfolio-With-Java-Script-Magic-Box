@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Schedule</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        #routine {
+            text-align: center;
+        }
+
+        #routine table{
+            margin: 0 auto;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Weekly Schedule</h1>
+    </header>
+
+    <section id="routine">
+        <h2>Weekly Schedule in BRACU</h2>
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>Free Time</th>
+            </tr>
+            <tr>
+                <td>Sunday</td>
+                <td>Free from 2pm</td>
+            </tr>
+            <tr>
+                <td>Monday</td>
+                <td>Off Day</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>Free from 11 to 2pm</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>Off Day</td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td>Free from 11 to 2pm</td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td>Free from 11 to 2pm</td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <p><a href="index.html" class="button">Back to Portfolio</a></p> 
+        <p id="modified-time"></p>
+        <script>
+            document.getElementById("modified-time").textContent = "Last modified on: " + document.lastModified;
+        </script>
+    </footer>
+</body>
+</html>
+
+
+
