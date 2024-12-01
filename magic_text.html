@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Y B Arzoo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">   
+</head>
+
+<body>
+
+    <header>
+        <h1> Y B Arzoo </h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#personal-information">About Me</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#fav-book">My Favorite Books</a></li>
+            <li><a href="#fav-quote">Favorite Quotes</a></li>
+            <li><a href="#photos">Photos</a></li>
+            <li><a href="weekly_schedule.html">Weekly Schedule</a></li>
+            <li><a href="#links">Favorite Links</a></li>
+            <li><a href="hero_converter.html">Hero Converter</a></li>
+            <li><a href="magic_numbers.html">Magical Numbers</a></li>
+            <li><a href="magic_text.html">Magical Texts</a></li>
+        </ul>
+    </nav>
+
+    <div id="text-magic">
+        <textarea id="text-area" rows="10" cols="50"></textarea>
+        <button onclick="clearText()">Clear All</button>
+        <button onclick="toggleCase()">Capitalize</button>
+        <button onclick="sortText()">Sort</button>
+        <button onclick="reverseText()">Reverse</button>
+        <button onclick="stripBlank()">Strip Blank</button>
+        <button onclick="addNumbers()">Add Numbers</button>
+        <button onclick="shuffleText()">Shuffle</button>
+
+    </div>
+
+
+    <script>
+        function clearText() {
+            document.getElementById("text-area").value = "";
+        }
+
+        function toggleCase() {
+            const textArea = document.getElementById("text-area");
+            const text = textArea.value;
+            
+            const toggledText = Array.form(text).map(char => {
+                if (char === char.toUpperCase()) {
+                    return char.toLowerCase();
+                } else {
+                    return char.toUpperCase();
+                }
+            }).join("");
+
+            textArea.value = toggledText;
+
+        }
+    
+        function sortText() {
+            const textArea = document.getElementById("text-area");
+            const lines = textArea.value.split("\n");
+            lines.sort();
+            textArea.value = lines.join("\n");
+        }
+
+        function reverseText() {
+            const textArea = document.getElementById("text-area");
+            const lines = textArea.value.split("\n");
+            textArea.value = lines.reverse().join("\n");
+        }
+
+        function stripBlank() {
+            const textArea = document.getElementById("text-area");
+            const lines = textArea.value.split('\n');
+            const cleanedLines = [];
+
+            for (let line of lines) {
+                const trimmedLine = line.trim();
+                if (trimmedLine) {
+                    cleanedLines.push(trimmedLine);
+                }
+            }
+
+            textArea.value = cleanedLines.join("\n");
+        }
+
+        function addNumbers() {
+            const textArea = document.getElementById("text-area");
+            const lines = textArea.value.split("\n");
+            const numberedLines = [];
+
+            for (let i = 0; i < lines.length; i++) {
+                numberedLines.push(`${i + 1}. ${lines[i]}`);
+
+            }
+
+            textArea.value = numberedLines.join("\n");
+
+        }
+
+        function shuffleText(){
+            const textArea = document.getElementById("text-area");
+            const lines = textArea.value.split("\n");
+            for (let i = lines.length -1; i> 0; i --) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [lines[i], lines[j]] = [lines[j], lines[i]];
+
+            }
+
+            textArea.value = lines.join("\n");
+        }
+    </script>
+
+
+</body>
+
+
+
+
+</html>    
