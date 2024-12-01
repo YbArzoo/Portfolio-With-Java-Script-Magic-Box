@@ -187,3 +187,85 @@ quote-button {
     background-color: #FFF8DE;
 
 }
+
+#text-magic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+#text-area {
+    width: 100%;
+    height: 200px;
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #aaa;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    resize: none;
+}
+
+#text-magic button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+#text-magic button:nth-child(2) {
+    background-color:  #2196F3; 
+    color: white;
+}
+
+#text-magic button:nth-child(3) {
+    background-color:#FF9800 ;
+    color: white;
+}
+
+#text-magic button:nth-child(4) {
+    background-color: #4CAF50; 
+    color: white;
+}
+
+#text-magic button:nth-child(5) {
+    background-color: #FFC107; 
+    color: white;
+}
+
+#text-magic button:nth-child(6) {
+    background-color: #f44336; 
+    color: white;
+}
+
+#text-magic button:nth-child(7) {
+    background-color: #9C27B0; 
+    color: black;
+}
+
+#text-magic button:nth-child(8) {
+    background-color: #607D8B; 
+    color: white;
+}
+
+
+#text-magic button:hover {
+    background-color: #333;
+    color: white;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
