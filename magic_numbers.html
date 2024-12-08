@@ -31,24 +31,29 @@
 
     <div id="number-operations">
         <input type="text" id="number-series" placeholder="Enter Your Favourite Numbers seperated by commas!">
-        <button onclick="processNumbers()">Process</button>
+
         <p id="output"></p>
     </div>
 
     <script>
+        document.getElementById("number-series").addEventListener("input", processNumbers);
         function processNumbers(){
             const input = document.getElementById("number-series").value;
-            const numbers = input.split(',').map(Number);
-            if (numbers.some(isNaN)){
-                document.getElementById("output").textContent = "Please enter valid numbers.";
+            const numbers = input.split(',').map(num => num.trim());
+
+            //validation and filter the numbers
+            const validNumbers = numbers.filter(num => /^-?\d+(\.\d+)?$/.test(num)).map(Number);
+            
+            if (validNumbers.length !== numbers.length) {
+                document.getElementById("output").textContent = "Please enter only valid numbers.";
                 return;
             }
 
-            const max = Math.max(...numbers);
-            const min = Math.min(...numbers);
-            const sum = numbers.reduce((a,b) => a+ b, 0);
-            const avg = sum / numbers.length;
-            const reversed = numbers.slice().reverse();
+            const max = Math.max(...validNumbers);
+            const min = Math.min(...validNumbers);
+            const sum = validNumbers.reduce((a,b) => a + b, 0);
+            const avg = sum / validNumbers.length;
+            const reversed = validNumbers.slice().reverse();
 
             document.getElementById("output").innerHTML = `
                 Max: ${max} <br>

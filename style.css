@@ -74,6 +74,7 @@ section{
     width: 60%;
     background-color: #f9f9f9;
     border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 table, th, td {
@@ -88,10 +89,17 @@ th{
     margin-left: 40px;
 }
 
-quote-button {
+.quote-button {
     margin: 5px;
-    padding: 5px 10px;
+    width: 40px; 
+    height: 40px;
+    border: none; 
     cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+}
+.quote-button:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
 }
 
 .button {

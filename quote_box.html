@@ -30,10 +30,12 @@
         <p id="quote">
             Random Quotes Generator
         </p>
-        <button class="quote-button" onclick="changeColor('red')">Red</button>
-        <button class="quote-button" onclick="changeColor('blue')">Blue</button>
-        <button class="quote-button" onclick="changeColor('green')">Green</button>
-        <button class="quote-button" onclick="changeColor('yellow')">Yellow</button>
+        <div>
+            <button class="quote-button" onclick="changeColor('red')" style="background-color: red;"></button>
+            <button class="quote-button" onclick="changeColor('blue')" style="background-color: blue;"></button>
+            <button class="quote-button" onclick="changeColor('green')" style="background-color: green;"></button>
+            <button class="quote-button" onclick="changeColor('yellow')" style="background-color: yellow;"></button>
+        </div>
     </div>
 
 
@@ -44,9 +46,42 @@
 
         function changeColor(color) {
             const box = document.getElementById("quote-box");
-            box.style.color = color;
-            box.style.borderColor = color;
-            box.style.backgroundColor = lightenOrDarken(color, 40); //dynamic color set kortese
+            let fontColor, backgroundColor, borderColor;
+
+            switch (color) {
+                case 'red':
+                    fontColor = "white"
+                    backgroundColor = '#f28b82';
+                    borderColor = 'red';
+                    break;
+
+                case 'blue':
+                    fontColor = 'white';
+                    backgroundColor = '#aecbfa'; 
+                    borderColor = 'blue';
+                    break;
+                
+                case 'green':
+                    fontColor = 'black';
+                    backgroundColor = '#ccffcc';
+                    borderColor = 'green';
+                    break;        
+
+                case 'yellow':
+                    fontColor = 'black';
+                    backgroundColor = '#fff9c4'; // light yellow
+                    borderColor = 'yellow';
+                    break;
+
+            
+            }
+
+            box.style.color = fontColor;
+            box.style.borderColor = borderColor;
+            box.style.backgroundColor = backgroundColor
+
+            box.style.fontFamily = color === 'yellow' ? 'Georgia, serif' : 'Verdana, sans-serif';
+            box.style.fontSize = color === 'blue' ? '22px' : '18px';
         }
 
         function lightenOrDarken(color, percent){

@@ -40,24 +40,26 @@
 
 
     <script>
-        function convert(){
+        function convert() {
             const value = parseFloat(document.getElementById("input-value").value);
             const unit = document.getElementById("unit-select").value;
             let result;
-
-            if (unit == "kg-to-lb"){
-                result = value * 2.2046 + " lbs";
-            }
-            else if (unit == "lb-to-kg"){
-                result = value * 0.4536 + " kg";
-
-            }
-            else {
+        
+            // Check if the input value is a valid number
+            if (isNaN(value) || value < 0) {
+                result = "Please enter a valid positive number.";
+            } else if (unit === "kg-to-lb") {
+                result = (value * 2.2046).toFixed(2) + " lbs"; 
+            } else if (unit === "lb-to-kg") {
+                result = (value * 0.4536).toFixed(2) + " kg"; 
+            } else {
                 result = "Invalid Selection";
             }
+        
 
             document.getElementById("result").textContent = result;
         }
+        
     </script>
 
 
